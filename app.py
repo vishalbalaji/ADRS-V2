@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, jsonify, flash
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
-from imutils import resize
 import os
 import cv2
 import numpy
