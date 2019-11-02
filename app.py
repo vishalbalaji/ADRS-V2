@@ -19,6 +19,9 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt()
 app.config['UPLOAD_FOLDER'] = './static/uploads'
 
+if !os.path.exists(app.config['UPLOAD_FOLDER'):
+        os.mkdir(app.config['UPLOAD_FOLDER'])
+
 graph1 = load_graph('bin/tmp1/output_graph.pb')
 labels1 = load_labels("bin/tmp1/output_labels.txt")
 graph2 = load_graph('bin/tmp/output_graph.pb')
