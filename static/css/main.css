@@ -128,10 +128,10 @@ a {
 }
 
 .images {
-  height: calc(100% - 4.5em);
+  height: 100%;
   width: 100%;
   display: flex;
-  padding: 0.5em;
+  margin: 0.5em;
 }
 
 .img-content {
