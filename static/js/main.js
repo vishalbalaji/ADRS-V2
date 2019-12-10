@@ -152,6 +152,9 @@ $("#process-button").click(function() {
 $("#reset-button").click(function() {
   document.getElementById("process-button").classList.remove("disabled");
   document.getElementById("reset-button").classList.add("disabled");
+  document.getElementById("src-img").src = "";
+  document.getElementById("dst-img").src = "";
+  document.getElementById("info").style.visibility = "hidden";
   imgProcessed = false;
 });
 
