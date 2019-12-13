@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>ADRS Login</title>
+	<link
+	    rel="stylesheet"
+	    href="{{ url_for('static', filename='css/login.css') }}"
+	    />
+    </head>
+    <body>
+	{% with messages = get_flashed_messages() %} {% if messages %}
+	<script>
+	    var messages = {{ messages | safe }};
+for (var i=0; i<messages.length; i++) {
+    alert(messages[i]);
+}
+	</script>
+{% endif %} {% endwith %}
+<div class="hero-container">
+    <div class="black-overlay">
+	<div class="hero-content">
+	    <header>
+		<div class="nav-logo-cluster">
+		    <h3>ADRS-DEMO</h3>
+		</div>
+		<nav>
+		    <ul>
+			<a href="#about-container"><li>About</li></a>
+			<a
+			    href="#"
+			    ><li>User Manual</li></a
+			>
+		    </ul>
+		</nav>
+	    </header>
+	    <section class="hero-body">
+		<div class="info-container" id="info-container">
+		    <h1>DCM DATALABS DEMO</h1>
+		    <h3>Automatic Defect Recognition System</h3>
+		    <div class="buttons-section">
+			<div class="button signin-button" id="signin-button">
+			    Sign In
+			</div>
+		    </div>
+		</div>
+		<div class="login-container" id="login-container">
+		    <h1>Sign In</h1>
+		    <form
+			action="{{ url_for('login') }}"
+			class="signin-form"
+			method="post"
+			>
+			<input type="text" placeholder="Username" name="username" />
+			<input type="password" placeholder="Password" name="password" />
+			<div class="buttons-section">
+			    <input
+				type="submit"
+				value="Sign In"
+				class="button form-signin-button"
+				/>
+			    <div class="button back-button white-button" id="back-button">
+				Back
+			    </div>
+			</div>
+		    </form>
+		</div>
+	    </section>
+	    <footer>
+		Powered by dcmdatalabs
+	    </footer>
+	</div>
+    </div>
+</div>
+<div class="about-container" id="about-container">
+    <h1>About ADRS</h1>
+    <div class="about-content">
+	<p>
+	Though AI concepts and theory date back to nearly 70 years, the true
+	fillip came only in recent years. The main reason is the use of
+	multi-layer perceptron and deep learning technology advancement along
+	with associated Hardware with powerful GPU.
+	</p>
+	<p>
+	The Automatic Defect Recognition System (ADRS) utilizes deep learning
+	paradigm of A.I. technology on NDT Digitized X-Ray Film images
+	(‘NDTDXFI’) data set for abnormality studies.
+	</p>
+	<p>
+	ADRS has been designed and developed by
+	<a href="http://dcmdatalabs.com" target="_blank"> Dcmdatalabs</a>, a
+	company focused on using AI Deep Learning paradigm in solutions to
+	enterprise business and healthcare. The idea is to address
+	“fundamental disconnect brought about by the rapid pace of change in
+	intelligent technology” and quickly exploit capabilities of technology
+	before changes happen
+	</p>
+	<p>
+	The pilot phase of the system is designed to identify defects in Welds
+	and Joints from RT X-Ray films. The system is able to classify the
+	Weld / Joint as Normal, Acceptable or Defective.
+	</p>
+    </div>
+</div>
+<script src="../static/js/login.js"></script>
+    </body>
+</html>
