@@ -116,6 +116,7 @@ def main():
 
     if request.method == 'POST':
         print('--------> POST <---------')
+        final_result = { "success": False }
         if request.files['file']:
             file = request.files['file']
             user_folder = os.path.join(app.config['UPLOAD_FOLDER'], f"./{session['user']}")
@@ -126,7 +127,7 @@ def main():
             else:
                 os.mkdir(os.path.join(app.config['UPLOAD_FOLDER'], f"./{session['user']}"))
 
-            orig_img_path = os.path.join(user_folder, file.filename)
+            orig_img_path = os.path.join(user_folder, str(file.filename))
             file.save(orig_img_path)
             pene_type = request.form['pene-type']
             weld_type = request.form['weld-type']
@@ -166,4 +167,4 @@ if __name__ == '__main__':
 
     app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-    app.run(debug=True, use_reloader=True, host='0.0.0.0', port=6200)
+    app.run(debug=False, port=5000, host="0.0.0.0")
