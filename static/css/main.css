@@ -178,20 +178,19 @@ a {
 .user-wrapper {
   display: flex;
   align-items: center;
-  padding-left: 3em;
+	gap: 0.5em;
 }
 
 .user {
   color: #727272;
-  margin: 0 0.3em 0 0;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .logout-button {
   background: #f44336;
   padding: 0.2em 0.5em 0.2em 0.5em;
   border-radius: 65px;
-  font-size: 0.5em;
+  font-size: 0.8em;
   color: #fffffa;
   transition: background 0.2s ease-in-out;
 }
@@ -660,4 +659,9 @@ a {
     width: 856.68px;
     height: 576px;
   } */
+}
+
+.nav-content h1 {
+	margin: 0;
+	color: #1e1e1e;
 }

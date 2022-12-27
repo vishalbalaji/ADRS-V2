@@ -35,7 +35,7 @@ function readURL(input) {
         table.deleteRow(i);
       }
       document.getElementById("process-button").classList.remove("disabled");
-      document.getElementById("reset-button").classList.add("disabled");
+      document.getElementById("reset-button").classList.remove("disabled");
       processEnabled = true;
       imgProcessed = false;
     };
@@ -79,6 +79,7 @@ $("#process-button").click(function() {
     document.getElementById("upload-file").disabled = true;
     document.getElementById("load-button").classList.add("disabled");
     document.getElementById("process-button").classList.add("disabled");
+    document.getElementById("reset-button").classList.add("disabled");
     processEnabled = false;
     $.ajax({
       url: $("image-upload").attr("action"),
@@ -150,6 +151,7 @@ $("#process-button").click(function() {
 });
 
 $("#reset-button").click(function() {
+	if (document.getElementById("reset-button").classList.contains("disabled")) return;
   document.getElementById("process-button").classList.remove("disabled");
   document.getElementById("reset-button").classList.add("disabled");
   document.getElementById("src-img").src = "";
